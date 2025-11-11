@@ -1,0 +1,18 @@
+[project]
+name = "vd-games-project"
+version = "1.0.0"
+description = "VD Games Project"
+authors = [
+    {name = "Student", email = "student@example.com"}
+]
+requires-python = ">=3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+vd-games = "games_project.scripts.game:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["games_project"]
