@@ -1,18 +1,39 @@
 [project]
-name = "vd-games-project"
-version = "1.0.0"
-description = "VD Games Project"
+name = "VD_games"
+version = "0.2.0"
+description = "Educational games package"
 authors = [
-    {name = "Student", email = "student@example.com"}
+    {name = "Student", email = "student@example.com"},
+]
+dependencies = [
+    "prompt",
 ]
 requires-python = ">=3.8"
+
+[project.scripts]
+VD-games = "VD_games.scripts.VD_games:main"
+VD-even = "VD_games.scripts.VD_even:main"
+VD-calc = "VD_games.scripts.VD_calc:main"
+VD-gcd = "VD_games.scripts.VD_gcd:main"
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
-[project.scripts]
-vd-games = "games_project.scripts.game:main"
+[tool.ruff]
+line-length = 88
+target-version = "py38"
 
-[tool.hatch.build.targets.wheel]
-packages = ["games_project"]
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "UP", # pyupgrade
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["VD_games"]

@@ -1,0 +1,17 @@
+.PHONY: lint format install build
+
+install:
+	uv sync
+
+build:
+	uv build
+
+lint:
+	uv run ruff check VD_games
+
+format:
+	uv run ruff format VD_games
+	uv run ruff check --fix VD_games
+
+test:
+	uv run python -m pytest
