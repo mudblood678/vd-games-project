@@ -1,7 +1,7 @@
 """Greatest Common Divisor game."""
 
-import random
 import math
+import random
 
 
 def generate_question():
@@ -20,8 +20,10 @@ def get_correct_answer(question):
 def main():
     """Main function for GCD game."""
     from VD_games.engine import game_engine
+
     description = "Find the greatest common divisor of given numbers."
     import sys
+
     current_module = sys.modules[__name__]
     game_engine.run_game(current_module, description)
 

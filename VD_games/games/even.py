@@ -17,8 +17,10 @@ def get_correct_answer(question):
 def main():
     """Main function for even number game."""
     from VD_games.engine import game_engine
+
     description = 'Answer "yes" if the number is even, otherwise answer "no".'
     import sys
+
     current_module = sys.modules[__name__]
     game_engine.run_game(current_module, description)
 
